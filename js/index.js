@@ -19,3 +19,70 @@ for (i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 };
+
+//Message Form Section
+const messageForm = document.getElementsByName("leave_message");
+messageForm[0].addEventListener('submit', (e) => {
+   e.preventDefault()
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+
+    console.log(name, email, message);
+
+//Message Display
+    const messageSection = document.getElementById('messages');
+    const messageList = messageSection.querySelector('ul');
+    const newMessage = document.createElement('li');
+    
+    newMessage.innerHTML = `
+    <a href="mailto: ${email}">${name}</a>
+    <span>wrote: ${message}</span>`;
+
+    //**Stretch Goal**  Messages Heading 
+    //only works when message list starts out empty
+    const messageHeading = messageSection.querySelector('h2');
+    messageHeading.innerHTML = "Messages";
+
+    //**Stretch Goal** Edit button
+    //I tried to use the following line, but it wouldn't work.
+        //const editMessage = newMessage.getElementsByName('message');
+
+    const editButton = document.createElement('button');
+    editButton.innerText='edit';
+    editButton.setAttribute('type', 'button');
+    const finishEditing = document.createElement('button');
+    finishEditing.innerText = 'done';
+    finishEditing.setAttribute('type', 'button');
+
+    editButton.addEventListener('click', (e) => {
+       //initially used this, which didn't work
+        //editMessage.contentEditable = true;
+       newMessage.contentEditable = true;
+
+       //the above works, but it allows to edit the whole newMessage textline, not just the message portion.
+    });
+
+    finishEditing.addEventListener('click', (e) => {
+        //editMessage.contentEditable = false;
+        newMessage.contentEditable = false;
+    });
+
+    //Remove button
+    const removeButton = document.createElement('button');
+    removeButton.innerText = "remove";
+    removeButton.setAttribute('type','button');
+    removeButton.addEventListener('click', (e) => {
+        const entry = removeButton.parentNode;
+        entry.remove();
+    });
+
+    newMessage.appendChild(removeButton);
+    newMessage.appendChild(editButton);
+    newMessage.appendChild(finishEditing);
+    messageList.appendChild(newMessage);
+
+    messageForm[0].reset();
+});
+
