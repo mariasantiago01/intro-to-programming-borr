@@ -1,0 +1,83 @@
+
+/*Body customization*/
+body {
+    text-align: center;
+    background-color: #be95c4;
+    color: #231942;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+/*Sections customization*/
+section {
+    border: double 1px aliceblue;
+    border-radius: 10px;
+    background-color:aliceblue;
+    margin: 5%;
+    padding: 20px;
+}
+li {
+    list-style-type:none;
+    border:#9f86c0 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: -2%;
+}
+/*Skills section*/
+.skills{
+    font-size: large;
+    display:inline-flex;
+}
+/*Website title customization*/
+.maria-title {
+    background-color:#231942;
+    color:#e0b1cb;
+    text-align: center;
+    font-size: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: -10%;
+    margin-right: -10%;
+}
+/*Headings customizations*/
+h2,h1 {
+    font-size: 30px;
+    color: #5e548e;
+    font-weight: bold;
+}
+/*Leave Message & Messages sections*/
+label {
+    text-align: start;
+    font-size: large;
+    color:#5e548e;
+}
+input, textarea {
+    font-size: large;
+    border: #9f86c0 2px solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+button {
+    color:#231942;
+    background-color:#9f86c0;
+    border:#9f86c0 2px solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+#messages {
+    display: inline-block;
+    font-size: large;
+}
+/*Footer customizations*/
+footer {
+    color:#be95c4;
+    word-spacing: 5px;
+    background-color:#231942;
+    padding: 10px;
+    margin-left: -10%;
+    margin-right: -10%;
+    margin-bottom: -10%;
+}
