@@ -7,57 +7,68 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h1 class="maria-title">Maria Santiago</h1>
-    <section>
+    <div class="nav-menu">
+        <div class="site-name">
+            <h1 class="maria-title">Maria Santiago</h1>
+        </div>
+        <div class="menu">
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#connect">Connect</a>
+            </nav>
+        </div>
+    </div>
+    <section id="about">
         <h1>About</h1>
         <p> Hello! my name is Maria, I'm in the process of becoming a web developer, and
-            I'm located in the Charlote, NC area.
-            <br>
+            I'm located in the Charlote, NC area. 
             I love art, music, technology, and many other things. 
-            <br> 
             Welcome to my website! Join me on my journey to becoming a full stack web developer in a few months.
         </p>
     </section>
     <section id="experience">
         <h1>Experience</h1>
         <ul>
-            <li>Quality Assurance Lab Technician at <em>Repi LLC</em></li>
-            <li>Chemistry Lab Teaching Assistant at <em>Appalachian State University</em> </li>
-            <li>Student Office Assistant at <em>Appalachian State University</em> </li>
-            <li>Personal Shopper at <em>Walmart</em> </li>
+            <li>Quality Assurance Lab Technician <em>Repi LLC</em></li>
+            <li>Chemistry Lab Teaching Assistant <em>Appalachian State University</em></li>
+            <li>Student Office Assistant <em>Appalachian State University</em></li>
+            <li>Personal Shopper <em>Walmart</em> </li>
         </ul>
     </section>
     <section id="skills">
         <h2>Skills</h2>
         <ul class="skills"></ul>
     </section>
-    <section>
+    <section id="connect">
         <h1>Connect</h1>
-        <p>
+        <div class="connect-links">
             <a href="https://github.com/mariasantiago01">GitHub</a>
-            <br>
             <a href="https://www.linkedin.com/in/mariaisantiago/">LinkedIn</a>
-        </p>
-    </section>
-    <section>
-        <h2>Leave a Message</h2>
-        <form name="leave_message">
-            <label for="name">Name:</label>
-            <input type="text" name="name" required="true">
-            <br/>
-            <label for="email">Email:</label>
-            <input type="email" name="email" required="true">
-            <br/>
-            <label for="message">Message:</label>
-            <textarea name="message" required="true"></textarea>
-            <br/>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-    <section id="messages">
-        <h2></h2>
-        <ul></ul>
-    </section>
+        </div>   
+        </section>
+    <div class="message-sections">
+        <section>
+            <h2>Leave a Message</h2>
+            <form name="leave_message">
+                <label for="name">Name:</label>
+                <input type="text" name="name" required="true">
+                <br/>
+                <label for="email">Email:</label>
+                <input type="email" name="email" required="true">
+                <br/>
+                <label for="message">Message:</label>
+                <textarea name="message" required="true"></textarea>
+                <br/>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="messages">
+            <h2></h2>
+            <ul></ul>
+        </section>
+    </div>
     <footer></footer>
     <script src="js/index.js"></script>
 </body>

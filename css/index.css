@@ -1,83 +1,181 @@
 
-/*Body customization*/
+/*Body Customization*/
 body {
-    text-align: center;
+    text-align: left;
     background-color: #be95c4;
     color: #231942;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: medium;
 }
 
-/*Sections customization*/
-section {
-    border: double 1px aliceblue;
-    border-radius: 10px;
-    background-color:aliceblue;
-    margin: 5%;
-    padding: 20px;
+/*Navigation Menu Customizations */
+.nav-menu {
+    display:flex;
+    background: #231942;
+    height: 50px;
+    margin: -1%;
+    padding: 3%;
+    justify-content: space-between;
 }
-li {
-    list-style-type:none;
-    border:#9f86c0 2px solid;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    margin-left: -2%;
-}
-/*Skills section*/
-.skills{
-    font-size: large;
-    display:inline-flex;
-}
-/*Website title customization*/
 .maria-title {
-    background-color:#231942;
+    float:left;
+    font-size: 30px;
     color:#e0b1cb;
-    text-align: center;
-    font-size: 35px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: -10%;
-    margin-right: -10%;
+    padding:10px;
+    letter-spacing:1px;
+    margin: 5px;
+    flex: 1;
 }
-/*Headings customizations*/
+nav a {    
+    line-height:65px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 20px;
+    color: #b7a9d3;
+    padding:4px;
+}
+
+/*Headings Customizations */
 h2,h1 {
     font-size: 30px;
     color: #5e548e;
     font-weight: bold;
+    padding-left: 1%;
+    margin-right: -1%;
 }
-/*Leave Message & Messages sections*/
+
+/*Sections Customization */
+section {
+    border: double 1px aliceblue;
+    border-radius: 10px;
+    background-color:aliceblue;
+    margin: 2%;
+    padding: 10px;
+}
+
+/*About Section */
+#about {
+    margin-top: 3%;
+}
+p {
+    padding-left: 10px;
+}
+li {
+    display:flex;
+    list-style-type: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: -2.5%;
+    justify-content:space-between;
+    background-color:#b7a9d34f;
+}
+
+/*Skills Section */
+.skills {
+    display:inline-flex;
+    font-size: large;
+    justify-content:space-around;
+    margin-top: -1.0%;
+    margin-left: -2%;
+}
+
+/*Connect Section */
+.connect-links {
+    display: inline-flex;
+    gap: 5px;
+    padding: 10px;
+    margin-top:-1%;
+}
+#connect a {
+    text-decoration: none;
+    border: #b7a9d34f;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #b7a9d34f;
+    color:#231942;
+}
+
+/*Leave Message & Messages Sections */
 label {
     text-align: start;
     font-size: large;
     color:#5e548e;
+    margin-left: 1%;
 }
 input, textarea {
+    display:flex;
     font-size: large;
     border: #9f86c0 2px solid;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 5px;
     margin: 2px;
+    margin-left: 1%;
+    flex: 1;
+    width: 70%;
+}
+form {
+    margin-right: -30%;
 }
 button {
-    color:#231942;
-    background-color:#9f86c0;
-    border:#9f86c0 2px solid;
-    border-radius: 5px;
+    color:aliceblue;
+    background-color:#5e548e;
+    border:#5e548e 2px solid;
+    border-radius: 3px;
     padding: 5px;
-    margin: 2px;
+    margin-bottom:2%;
+    margin-left: 2%;
+}
+.message-sections {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin:2%;
 }
 #messages {
-    display: inline-block;
     font-size: large;
+    justify-content:left;
+    width: 70%;
 }
-/*Footer customizations*/
+
+/*Media Query */
+@media (max-width: 700px) {
+    body {
+        margin:8px; 
+    }
+    .nav-menu {
+        height: 120px;
+        background: #231942;
+        margin: -2%;
+        padding: 3%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav a {
+        font-size: 15px;
+    }
+    .message-sections {
+        display: block;
+    }
+    li {
+        margin-left: -10%;
+    }
+    .skills {
+        margin-left: -5%;
+    }
+}
+
+/*Footer Customizations */
 footer {
+    text-align: center;
     color:#be95c4;
     word-spacing: 5px;
     background-color:#231942;
     padding: 10px;
-    margin-left: -10%;
-    margin-right: -10%;
-    margin-bottom: -10%;
+    margin-left: -1%;
+    margin-right: -1%;
+    margin-bottom: -1%;
+    letter-spacing: 3px;
 }
