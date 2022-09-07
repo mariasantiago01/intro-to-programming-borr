@@ -37,8 +37,8 @@ messageForm[0].addEventListener('submit', (e) => {
     const newMessage = document.createElement('li');
     
     newMessage.innerHTML = `
-    <a href="mailto: ${email}">${name}</a> wrote: 
-    <span>${message}</span>`;
+    <p><a href="mailto: ${email}">${name}</a> wrote: </p>
+    <p><span>${message}</span></p>`;
 
     //**Stretch Goal**  Messages Heading 
     //only works when message list starts out empty
@@ -95,19 +95,24 @@ messageForm[0].addEventListener('submit', (e) => {
 });
 
 //Fetch Github Repositories
-const githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/mariasantiago01/repos');
-githubRequest.send();
-githubRequest.addEventListener('load', function () {
-    const repositories = JSON.parse(this.response);
-    console.log(repositories);
-    const projectSection = document.getElementById('projects');
-    const projectList = projectSection.querySelector('ul');
-
-    for (i = 0; i < repositories.length; i++) {
-        const project = document.createElement('li');
-        //initially was innerText
-        project.innerHTML = `<a href=${repositories[i].html_url}>${repositories[i].name}</a>  ${new Date(repositories[i].created_at)}`;
-        projectList.appendChild(project);
-    }
-})
+fetch('https://api.github.com/users/mariasantiago01/repos')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(response) {
+        const repositories = response;
+        console.log(repositories);
+        const projectSection = document.getElementById('projects');
+        const projectList = projectSection.querySelector('ul');
+        
+        for (i = 0; i < repositories.length; i++) {
+            const project = document.createElement('li');
+            //initially was innerText
+            project.innerHTML = `<a href=${repositories[i].html_url}>${repositories[i].name}</a>  
+            ${new Date(repositories[i].created_at)}`;
+            projectList.appendChild(project);
+        }
+    })
+    .catch(function(error) {
+        console.error("There has been a problem with the fetch operation: ", error);
+    });
