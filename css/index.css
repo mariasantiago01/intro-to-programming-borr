@@ -191,7 +191,7 @@ footer {
         margin: 8px;
     }
     .nav-menu {
-        height: 120px;
+        height: 105px;
         background: #231942;
         margin: -3%;
         padding: 4%;
@@ -216,13 +216,15 @@ footer {
         width: 85%;
     }
     #messages {
-        width: 80%;
+        width: 95%;
+        margin-left: 1%;
     }
     li {
         margin-left: -5%;
     }
     footer {
         margin-left: -2%;
+        margin-right: -3.1%;
     }
 }
 /*Media Query 2*/
