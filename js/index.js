@@ -6,7 +6,13 @@ const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
 copyright.innerHTML = `Maria Santiago ${thisYear}`;
 
+const socialMedia = document.createElement('p');
+socialMedia.innerHTML = `<a class="social-a" href="https://www.linkedin.com/in/mariaisantiago/">LinkedIn</a>
+<a class="social-a" href="https://github.com/mariasantiago01">GitHub</a>`;
+
+
 footer.appendChild(copyright);
+footer.appendChild(socialMedia);
 
 //Skills Section
 const skills = ["HTML", "CSS", "JavaScript"];
@@ -16,6 +22,7 @@ const skillsList = skillsSection.querySelector('ul');
 
 for (i = 0; i < skills.length; i++) {
     const skill = document.createElement('li');
+    skill.classList.add('each-skill');
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 };
@@ -35,42 +42,14 @@ messageForm[0].addEventListener('submit', (e) => {
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
-    
+    newMessage.classList.add('each-message');
     newMessage.innerHTML = `
     <p><a href="mailto: ${email}">${name}</a> wrote: </p>
     <p><span>${message}</span></p>`;
 
     //**Stretch Goal**  Messages Heading 
-    //only works when message list starts out empty
     const messageHeading = messageSection.querySelector('h2');
     messageHeading.innerHTML = "Messages";
-
-    //**Stretch Goal** Edit button - *****HIDDEN*****UNDER-CONSTRUCTION*****
-    //I tried to use the following line, but it wouldn't work.
-        //const editMessage = newMessage.getElementsByName('message');
-    //Add a class to the newMessage portion... **under-construction**
-
-    //edit button (do not change)
-    //const editButton = document.createElement('button');
-    //editButton.innerText='edit';
-    //editButton.setAttribute('type', 'button');
-
-    //const finishEditing = document.createElement('button');
-    //finishEditing.innerText = 'done';
-    //finishEditing.setAttribute('type', 'button');
-
-    //editButton.addEventListener('click', (e) => {
-       //initially used this, which didn't work
-        //editMessage.contentEditable = true;
-        //messageEdit.contentEditable = true;
-
-       //the above works, but it allows to edit the whole newMessage textline, not just the message portion.
-    //});
-
-    //finishEditing.addEventListener('click', (e) => {
-        //editMessage.contentEditable = false;
-        //newMessage.contentEditable = false;
-    //});
 
     //Remove button
     const removeButton = document.createElement('button');
@@ -88,8 +67,6 @@ messageForm[0].addEventListener('submit', (e) => {
 
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
-    //newMessage.appendChild(editButton); //Under-Construction
-    //newMessage.appendChild(finishEditing); //Under-construction
 
     messageForm[0].reset();
 });
@@ -107,9 +84,10 @@ fetch('https://api.github.com/users/mariasantiago01/repos')
         
         for (i = 0; i < repositories.length; i++) {
             const project = document.createElement('li');
-            //initially was innerText
-            project.innerHTML = `<a href=${repositories[i].html_url}>${repositories[i].name}</a>  
-            ${new Date(repositories[i].created_at)}`;
+            project.classList.add('each-project');
+
+            project.innerHTML = `<a href=${repositories[i].html_url}>${repositories[i].name}</a>`;
+
             projectList.appendChild(project);
         }
     })
