@@ -23,7 +23,7 @@ body {
     float: left;
     font-size: 30px;
     font-family: 'Aboreto';
-    color: #e0b1cb;
+    color: #f8c6ff;
     padding: 10px;
     letter-spacing: 1px;
     margin: 5px;
@@ -35,9 +35,12 @@ nav a {
     text-decoration: none;
     letter-spacing: 3px;
     font-size: 20px;
-    color: #ccc0e5;
+    color: #e6d9ff;
     padding: 2px;
     margin-right: 10px;
+}
+nav a:hover {
+    color:#d684e1;
 }
 
 /*Headings Customizations */
@@ -137,6 +140,10 @@ button {
     width: 75px;
     height: 35px;
 }
+button:hover {
+    background-color:#d684e1;
+    border:#d684e1;
+}
 .message-sections {
     display: flex;
     flex: 1;
@@ -167,7 +174,7 @@ button {
 /*Footer Customizations */
 footer {
     display: flex;
-    color: #be95c4;
+    color: #ecc1f5;
     word-spacing: 5px;
     background-color: #231942;
     padding: 10px;
@@ -178,10 +185,14 @@ footer {
     justify-content: space-around;
     flex: 1;
 }
-.social-a {
+.fa {
     color: #ccc0e5;
     text-decoration: none;
     margin-left: 15px;
+    font-size: 20px !important;
+}
+.fa:hover {
+    color:#d684e1;
 }
 
 /*Media Query 1 */

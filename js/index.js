@@ -7,8 +7,8 @@ const copyright = document.createElement('p');
 copyright.innerHTML = `Maria Santiago ${thisYear}`;
 
 const socialMedia = document.createElement('p');
-socialMedia.innerHTML = `<a class="social-a" href="https://www.linkedin.com/in/mariaisantiago/">LinkedIn</a>
-<a class="social-a" href="https://github.com/mariasantiago01">GitHub</a>`;
+socialMedia.innerHTML = `<a class="fa fa-linkedin" href="https://www.linkedin.com/in/mariaisantiago/"></a>
+<a class="fa fa-github" href="https://github.com/mariasantiago01"></a>`;
 
 
 footer.appendChild(copyright);
