@@ -14,8 +14,23 @@ socialMedia.innerHTML = `<a class="fa fa-linkedin" href="https://www.linkedin.co
 footer.appendChild(copyright);
 footer.appendChild(socialMedia);
 
+//Hamburger Menu Section
+const hamburger = document.querySelector('.hamburger');
+const navMenu= document.querySelector('.menu-items');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+})
+
+document.querySelectorAll('nav a').forEach(n => 
+n.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+}))
+
 //Skills Section
-const skills = ["HTML", "CSS", "JavaScript"];
+const skills = ["HTML", "CSS", "JavaScript", "Drawing"];
 
 const skillsSection = document.getElementById('skills');
 const skillsList = skillsSection.querySelector('ul');
