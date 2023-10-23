@@ -53,18 +53,43 @@ messageForm[0].addEventListener('submit', (e) => {
 
     console.log(name, email, message);
 
-//Message Display
+    //Message Display
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
     newMessage.classList.add('each-message');
     newMessage.innerHTML = `
     <p><a href="mailto: ${email}">${name}</a> wrote: </p>
-    <p><span>${message}</span></p>`;
+    <p><span class="added-message" contenteditable="false">${message}</span></p>`;
 
     //**Stretch Goal**  Messages Heading 
     const messageHeading = messageSection.querySelector('h2');
     messageHeading.innerHTML = "Messages";
+
+    // Create edit button
+    const editButton = document.createElement('button');
+    editButton.innerText = 'edit';
+    editButton.setAttribute('type','button');
+
+    let editableMessage = document.getElementsByClassName("added-message");
+    
+    //Give functionality to edit button
+    editButton.addEventListener('click', (e) => {
+        editableMessage[0].style.padding = "5px";
+        editableMessage[0].style.backgroundColor = "#b7a9d3"; 
+        editableMessage[0].style.borderRadius = "3px";
+        editableMessage[0].style.border = "#5e548e 1px solid";          
+        editableMessage[0].setAttribute("contenteditable", true);
+        editButton.innerText= 'done';
+
+        //"done button" event after clicking it 
+        editButton.addEventListener('click', (e) => {
+            editableMessage[0].style.backgroundColor = ""; 
+            editableMessage[0].style.border = ""; 
+            editableMessage[0].setAttribute("contenteditable", false);
+            editButton.remove();
+        });
+    })
 
     //Remove button
     const removeButton = document.createElement('button');
@@ -81,6 +106,7 @@ messageForm[0].addEventListener('submit', (e) => {
     });
 
     newMessage.appendChild(removeButton);
+    newMessage.appendChild(editButton);
     messageList.appendChild(newMessage);
 
     messageForm[0].reset();
