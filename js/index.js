@@ -76,9 +76,9 @@ messageForm[0].addEventListener('submit', (e) => {
     //Give functionality to edit button
     editButton.addEventListener('click', (e) => {
         editableMessage[0].style.padding = "5px";
-        editableMessage[0].style.backgroundColor = "#b7a9d3"; 
+        editableMessage[0].style.backgroundColor = "#7D7C7C"; 
         editableMessage[0].style.borderRadius = "3px";
-        editableMessage[0].style.border = "#5e548e 1px solid";          
+        editableMessage[0].style.border = "#7D7C7C 1px solid";          
         editableMessage[0].setAttribute("contenteditable", true);
         editButton.innerText= 'done';
 
