@@ -30,7 +30,7 @@ n.addEventListener('click', () => {
 }))
 
 //Skills Section
-const skills = ["HTML", "CSS", "JavaScript", "Drawing"];
+const skills = ["HTML", "CSS", "JavaScript", "Node.js"];
 
 const skillsSection = document.getElementById('skills');
 const skillsList = skillsSection.querySelector('ul');
